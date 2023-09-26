@@ -36,24 +36,6 @@ const PropsSingers = (props) => {
         </Swiper>
             
         </>
-        // {/* <div className="container-fixed stacked-cards stacked-cards-fanOut">
-		// 	<ul>
-        //     {singers.map(singer => (
-        //         <li key={singer._id}>
-        //             <img src={require(`../../../../server/public/photos/${singer.image}`)} alt="not found" />
-        //             <div className="content">
-        //                 <h3>{singer.name}</h3>
-        //                 <a className="playlist" href="#ff"><i className="fa-solid fa-play"></i></a>
-        //                 <div className="icons">
-        //                     <a href="#ww" className="y"><i className="fa-brands fa-youtube"></i></a>
-        //                     <a href="#fff" className="sc"><i className="fa-brands fa-soundcloud"></i></a>
-        //                     <a href="#sss" className="s"><i className="fa-brands fa-spotify"></i></a>
-        //                 </div>
-        //             </div>
-        //         </li>
-        //     ))}
-        //     </ul>
-        // </div> */}
     );
 }
 
