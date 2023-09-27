@@ -9,9 +9,13 @@ dotenv.config({path: 'config.env'});
 const ApiError = require('./utils/apiError');
 const globalError = require('./middlewares/errorMiddleware');
 const dbConnection = require('./config/mongoDB');
+
+// API import
 const singerCardAPI = require('./api/singerCardAPI');
 const songCardAPI = require('./api/songCardAPI');
 const registerAPI = require('./api/registerAPI');
+const playlistAPI = require('./api/playlistCardAPI');
+
 
 
 dbConnection();
@@ -38,9 +42,12 @@ if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));
 }
 
+
 app.use('/api/singers', singerCardAPI);
 app.use('/api/songs', songCardAPI);
 app.use('/api/registers', registerAPI);
+app.use('/api/playlists', playlistAPI);
+
 
 
 // app.get('/cookies', (req, res) => {

@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 const NavbarMusic = () => {
     return(
-        <div className="page">
             <div className="side">
                 <div className="logo">
                     <Link href=""><i className="fa-solid fa-arrow-left"></i></Link>
@@ -22,7 +21,7 @@ const NavbarMusic = () => {
                 <div className="links">
                     <div>
                         <img src={home} alt="" />
-                        <Link href="">home</Link>
+                        <Link to={'/'}>home</Link>
                     </div>
                     <div>
                         <img src={music} alt="" />
@@ -38,10 +37,6 @@ const NavbarMusic = () => {
                     </div>
                 </div>
             </div>
-            <div className="playlist">
-                <h1>music</h1>
-            </div>
-        </div>
     );
 }
 export default NavbarMusic;

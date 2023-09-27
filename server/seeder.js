@@ -1,7 +1,9 @@
 const fs = require('fs');
 const dotenv = require('dotenv');
 // const Song = require('./models/songData');
-const Singer = require('./models/singerData');
+// const Singer = require('./models/singerData');
+const Playlist = require('./models/playlists');
+
 const dbConnection = require('./config/mongoDB');
 
 
@@ -10,12 +12,12 @@ dotenv.config({path: 'config.env'});
 dbConnection();
 
 
-const songs = JSON.parse(fs.readFileSync('./sendDataDB/singers.json'));
+const playlists = JSON.parse(fs.readFileSync('./sendDataDB/playlists.json'));
 
 
 const sendData = async () => {
     try{
-        await Singer.create(songs);
+        await Playlist.create(playlists);
         console.log("Data inserted");
         process.exit();
     }
@@ -26,7 +28,7 @@ const sendData = async () => {
 
 const destroyData = async () => {
     try{
-        await Singer.deleteMany(songs);
+        await Playlist.deleteMany(playlists);
         console.log("Data destroyed");
         process.exit();
     }
